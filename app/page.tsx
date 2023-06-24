@@ -56,7 +56,7 @@ export default function Main () {
       const lat1 = selectedCity1.lat
       const lng1 = selectedCity1.lng
       const response1 = await fetch(
-        `http://localhost:8080/v2/weather?cityID=${cityID1}&lat=${lat1}&lng=${lng1}`
+        `https://weather-together-390806.uc.r.appspot.com/v2/weather?cityID=${cityID1}&lat=${lat1}&lng=${lng1}`
       )
       const data1 = await response1.json()
       console.warn(data1)
@@ -67,7 +67,7 @@ export default function Main () {
       const lat2 = selectedCity2.lat
       const lng2 = selectedCity2.lng
       const response2 = await fetch(
-        `http://localhost:8080/v2/weather?cityID=${cityID2}&lat=${lat2}&lng=${lng2}`
+        `https://weather-together-390806.uc.r.appspot.com/v2/weather?cityID=${cityID2}&lat=${lat2}&lng=${lng2}`
       )
       const data2 = await response2.json()
       console.warn(data2)
