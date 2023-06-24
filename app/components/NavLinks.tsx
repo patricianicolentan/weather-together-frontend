@@ -1,4 +1,5 @@
-import Link from '@mui/material/Link';
+import React from 'react'
+import Link from '@mui/material/Link'
 
 export function NavLinks (props: { text: string }) {
   return (
@@ -10,5 +11,5 @@ export function NavLinks (props: { text: string }) {
         <span className={props.text === 'About' ? 'bold' : ''}>About</span>
       </Link>
     </div>
-  );
+  )
 }

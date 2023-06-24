@@ -172,7 +172,7 @@ export default function Main () {
               selectedCity1 !== cityPlaceholder &&
               !loading1 && (
                 <WeatherInfo weatherData={weather1} city={selectedCity1} />
-              )}
+            )}
             {loading1 && <CircularIndeterminate />}
           </Grid>
           <Grid item xs={6} className="center">
@@ -181,7 +181,7 @@ export default function Main () {
               selectedCity2 &&
               !loading2 && (
                 <WeatherInfo weatherData={weather2} city={selectedCity2} />
-              )}
+            )}
             {loading2 && <CircularIndeterminate />}
           </Grid>
         </Grid>
@@ -192,7 +192,6 @@ export default function Main () {
           <CircularIndeterminate />
         </div>
       )}
-      
     </div>
   )
 }

@@ -1,7 +1,8 @@
-import Grid from '@mui/material/Grid';
-import { WeatherData, City } from './../interfaces';
-import { weatherCodeMapping } from '@/public/data/weatherCodeMapping';
-import { WeatherIcon } from './WeatherIcon';
+import Grid from '@mui/material/Grid'
+import { WeatherData, City } from './../interfaces'
+import { weatherCodeMapping } from '@/public/data/weatherCodeMapping'
+import { WeatherIcon } from './WeatherIcon'
+import React from 'react'
 
 export function WeatherInfo ({
   weatherData,
@@ -11,7 +12,7 @@ export function WeatherInfo ({
   city: City;
 }) {
   const { icon, description } =
-    weatherCodeMapping[weatherData.weathercode] || {};
+    weatherCodeMapping[weatherData.weathercode] || {}
 
   return (
     <center>
@@ -57,5 +58,5 @@ export function WeatherInfo ({
         </Grid>
       </div>
     </center>
-  );
+  )
 }

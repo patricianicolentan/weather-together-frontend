@@ -11,7 +11,7 @@ import Footer from './../components/Footer'
 
 export default function About () {
   const [loading, setLoading] = useState(true)
-  
+
   useEffect(() => {
     setLoading(false)
   }, [])

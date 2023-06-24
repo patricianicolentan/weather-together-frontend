@@ -1,4 +1,6 @@
-export default function Footer() {
+import React from 'react'
+
+export default function Footer () {
   return (
     <div className="footer">
       <div className="footer-text">© 2023 Patricia Nicole Tan</div>
@@ -10,5 +12,5 @@ export default function Footer() {
         </a>
       </div>
     </div>
-  );
+  )
 }
