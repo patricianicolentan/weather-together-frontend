@@ -1,0 +1,32 @@
+import { WeatherCodeMapping } from '../../app/interfaces';
+
+export const weatherCodeMapping: WeatherCodeMapping = {
+  0: { icon: 'sun', description: 'Clear sky' },
+  1: { icon: 'sun', description: 'Mainly clear' },
+  2: { icon: 'partly_cloudy', description: 'Partly cloudy' },
+  3: { icon: 'clouds', description: 'Overcast' },
+  45: { icon: 'fog', description: 'Fog' },
+  48: { icon: 'fog', description: 'Depositing rime fog' },
+  51: { icon: 'rain', description: 'Light drizzle' },
+  53: { icon: 'rain', description: 'Moderate drizzle' },
+  55: { icon: 'rain', description: 'Dense drizzle' },
+  56: { icon: 'rain', description: 'Light freezing drizzle' },
+  57: { icon: 'rain', description: 'Dense freezing drizzle' },
+  61: { icon: 'rain', description: 'Slight rain' },
+  63: { icon: 'rain', description: 'Moderate rain' },
+  65: { icon: 'rain', description: 'Heavy rain' },
+  66: { icon: 'rain', description: 'Light freezing rain' },
+  67: { icon: 'rain', description: 'Heavy freezing rain' },
+  71: { icon: 'snow_fall', description: 'Slight snow fall' },
+  73: { icon: 'snow_fall', description: 'Moderate snow fall' },
+  75: { icon: 'snow_fall', description: 'Heavy snow fall' },
+  77: { icon: 'snow_fall', description: 'Snow grains' },
+  80: { icon: 'rain', description: 'Slight rain showers' },
+  81: { icon: 'rain', description: 'Moderate rain showers' },
+  82: { icon: 'rain', description: 'Violent rain showers' },
+  85: { icon: 'snow', description: 'Slight snow showers' },
+  86: { icon: 'snow', description: 'Heavy snow showers' },
+  95: { icon: 'storm', description: 'Slight thunderstorm' },
+  96: { icon: 'storm', description: 'Thunderstorm with slight hail' },
+  99: { icon: 'storm', description: 'Thunderstorm with heavy hail' }
+}
