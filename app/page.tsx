@@ -59,7 +59,6 @@ export default function Main () {
         `https://weather-together-390806.uc.r.appspot.com/v2/weather?cityID=${cityID1}&lat=${lat1}&lng=${lng1}`
       )
       const data1 = await response1.json()
-      console.warn(data1)
       setWeather1(data1)
       setLoading1(false)
 
@@ -70,10 +69,8 @@ export default function Main () {
         `https://weather-together-390806.uc.r.appspot.com/v2/weather?cityID=${cityID2}&lat=${lat2}&lng=${lng2}`
       )
       const data2 = await response2.json()
-      console.warn(data2)
       setWeather2(data2)
       setLoading2(false)
-      console.log(weather1, weather2)
     } catch (error) {
       console.error('Error fetching weather data:', error)
       setLoading1(false)
