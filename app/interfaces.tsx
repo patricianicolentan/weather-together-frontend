@@ -1,4 +1,5 @@
 export interface City {
+  admin_name: string;
   city: string;
   lat: string;
   lng: string;

@@ -5,7 +5,6 @@ import { debounce } from 'lodash'
 import { Autocomplete, Button, TextField } from '@mui/material'
 import Grid from '@mui/material/Grid'
 
-import { cityPlaceholder } from '@/public/data/cityPlaceholder'
 import citiesData from './../public/data/cities.json'
 import { City, WeatherData } from './interfaces'
 import fetchCities from './utils/fetchCities'
@@ -80,8 +79,6 @@ export default function Main () {
 
   // on mount, get city options
   useEffect(() => {
-    setSelectedCity1(cityPlaceholder)
-    setSelectedCity2(cityPlaceholder)
     const cities = citiesData as City[]
     const filteredCities = fetchCities(cities, '')
     setSuggestedCities(filteredCities)
@@ -115,7 +112,7 @@ export default function Main () {
               id="city-input-1"
               options={filteredCities}
               sx={{ width: 300, marginRight: 5 }}
-              getOptionLabel={(city: City) => `${city.city}, ${city.country}`}
+              getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
               size="small"
               value={selectedCity1}
               onChange={(event, newValue) => {
@@ -134,7 +131,7 @@ export default function Main () {
               id="city-input-2"
               options={filteredCities}
               sx={{ width: 300 }}
-              getOptionLabel={(city: City) => `${city.city}, ${city.country}`}
+              getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
               size="small"
               value={selectedCity2}
               onChange={(event, newValue) => {
@@ -166,7 +163,6 @@ export default function Main () {
           <Grid item xs={6} className="center">
             {weather1 &&
               selectedCity1 &&
-              selectedCity1 !== cityPlaceholder &&
               !loading1 && (
                 <WeatherInfo weatherData={weather1} city={selectedCity1} />
             )}
@@ -174,7 +170,6 @@ export default function Main () {
           </Grid>
           <Grid item xs={6} className="center">
             {weather2 &&
-              selectedCity2 !== cityPlaceholder &&
               selectedCity2 &&
               !loading2 && (
                 <WeatherInfo weatherData={weather2} city={selectedCity2} />
