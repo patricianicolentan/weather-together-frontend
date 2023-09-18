@@ -4,7 +4,7 @@
 Frontend for Weather Together, a web app to view two cities' weather forecasts
 
 ## Instructions
-To run the application locally, use ```npm run dev```. By default, the application runs at http://localhost:3000. 
+To run the application locally, use ```npm run dev```. By default, the application runs at http://localhost:3000. Change the API calls to match.
 
 ## Screenshots
 Screenshots from the live version on https://weather-together-web.netlify.app/
