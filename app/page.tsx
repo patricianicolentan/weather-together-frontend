@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { debounce } from 'lodash'
-import { Autocomplete, Button, TextField } from '@mui/material'
+import { Autocomplete, Button, TextField, Hidden } from '@mui/material'
 import Grid from '@mui/material/Grid'
 
 import citiesData from './../public/data/cities.json'
@@ -13,7 +13,7 @@ import { WeatherInfo } from './components/WeatherInfo'
 import { NavLinks } from './components/NavLinks'
 import Footer from './components/Footer'
 
-export default function Main () {
+export default function Main () {  
   // State
   const [selectedCity1, setSelectedCity1] = useState<City | null>(null)
   const [selectedCity2, setSelectedCity2] = useState<City | null>(null)
@@ -91,91 +91,185 @@ export default function Main () {
       {!loading && (
       <><div className="navbar">
           <NavLinks text={'Home'} />
-          <span className="appName">Weather Together</span>
         </div>
         <Grid container spacing={4} className="container">
-          <Grid container direction="column" sx={{ margin: 5 }}>
-            <center>
-              <h2>View the weather together</h2>
-              <p>Choose two cities from anywhere in the world</p>
-              <p>And see what the day will be like</p>
-            </center>
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            className="center"
-            sx={{ marginBottom: 5 }}
-          >
-            <Autocomplete
-              disablePortal
-              id="city-input-1"
-              options={filteredCities}
-              sx={{ width: 300, marginRight: 5 }}
-              getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
-              size="small"
-              value={selectedCity1}
-              onChange={(event, newValue) => {
-                setSelectedCity1(newValue)
-                setWeather1(null)
-              } }
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="City 1"
-                  value={selectedCity1?.city || ''}
-                  onChange={handleInputChange} />
-              )} />
-            <Autocomplete
-              disablePortal
-              id="city-input-2"
-              options={filteredCities}
-              sx={{ width: 300 }}
-              getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
-              size="small"
-              value={selectedCity2}
-              onChange={(event, newValue) => {
-                setSelectedCity2(newValue)
-                setWeather2(null)
-              } }
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="City 2"
-                  value={selectedCity2?.city || ''}
-                  onChange={handleInputChange} />
-              )} />
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            className="center"
-            sx={{ marginBottom: 5 }}
-          >
-            <Button
-              variant="contained"
-              className="goButton"
-              onClick={fetchWeatherData}
+          {/* Mobile layout */}
+          <Hidden mdUp>
+            <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Grid
+                container
+                direction="row"
+                className="center"
+                sx={{ marginBottom: 4, flexDirection: 'column', alignItems: 'center' }}
+              >
+                <h2>View the weather together</h2>
+                <p>Choose two cities from anywhere in the world</p>
+                <p>And see what the day will be like</p>
+              </Grid>
+              <Grid
+                container
+                direction="row"
+                className="center"
+                sx={{ marginBottom: 4, flexDirection: 'column', alignItems: 'center' }}
+              >
+                <Autocomplete
+                  disablePortal
+                  id="city-input-1"
+                  options={filteredCities}
+                  sx={{ width: '75%', marginBottom: 2 }}
+                  getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
+                  size="small"
+                  value={selectedCity1}
+                  onChange={(event, newValue) => {
+                    setSelectedCity1(newValue)
+                    setWeather1(null)
+                  } }
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="City 1"
+                      value={selectedCity1?.city || ''}
+                      onChange={handleInputChange} />
+                  )} />
+                <Autocomplete
+                  disablePortal
+                  id="city-input-2"
+                  options={filteredCities}
+                  sx={{ width: '75%', marginBottom: 2 }}
+                  getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
+                  size="small"
+                  value={selectedCity2}
+                  onChange={(event, newValue) => {
+                    setSelectedCity2(newValue)
+                    setWeather2(null)
+                  } }
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="City 2"
+                      value={selectedCity2?.city || ''}
+                      onChange={handleInputChange} />
+                  )} />
+              </Grid>
+              <Grid
+                container
+                direction="row"
+                className="center"
+                sx={{ marginBottom: 5, flexDirection: 'column', alignItems: 'center' }}
+              >
+                <Button
+                  variant="contained"
+                  className="goButton"
+                  onClick={fetchWeatherData}
+                  sx={{ width: '25%' }}
+                >
+                  <b>Submit</b>
+                </Button>
+              </Grid>
+              <Grid item xs={12} className="center" paddingBottom={4}>
+                {weather1 &&
+                  selectedCity1 &&
+                  !loading1 && (
+                    <WeatherInfo weatherData={weather1} city={selectedCity1} />
+                )}
+                {loading1 && <CircularIndeterminate />}
+              </Grid>
+              <Grid item xs={12} className="center" paddingBottom={8}>
+                {weather2 &&
+                  selectedCity2 &&
+                  !loading2 && (
+                    <WeatherInfo weatherData={weather2} city={selectedCity2} />
+                )}
+                {loading2 && <CircularIndeterminate />}
+              </Grid>
+            </Grid>
+          </Hidden>
+
+          {/* Desktop layout */}
+          <Hidden smDown>
+            <Grid container direction="column" sx={{ margin: 5 }}>
+              <center>
+                <h2>View the weather together</h2>
+                <p>Choose two cities from anywhere in the world</p>
+                <p>And see what the day will be like</p>
+              </center>
+            </Grid>
+            <Grid
+              container
+              direction="row"
+              className="center"
+              sx={{ marginBottom: 5 }}
             >
-              <b>Submit</b>
-            </Button>
-          </Grid>
-          <Grid item xs={6} className="center">
-            {weather1 &&
-              selectedCity1 &&
-              !loading1 && (
-                <WeatherInfo weatherData={weather1} city={selectedCity1} />
-            )}
-            {loading1 && <CircularIndeterminate />}
-          </Grid>
-          <Grid item xs={6} className="center">
-            {weather2 &&
-              selectedCity2 &&
-              !loading2 && (
-                <WeatherInfo weatherData={weather2} city={selectedCity2} />
-            )}
-            {loading2 && <CircularIndeterminate />}
-          </Grid>
+              <Autocomplete
+                disablePortal
+                id="city-input-1"
+                options={filteredCities}
+                sx={{ width: 300, marginRight: 5 }}
+                getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
+                size="small"
+                value={selectedCity1}
+                onChange={(event, newValue) => {
+                  setSelectedCity1(newValue)
+                  setWeather1(null)
+                } }
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="City 1"
+                    value={selectedCity1?.city || ''}
+                    onChange={handleInputChange} />
+                )} />
+              <Autocomplete
+                disablePortal
+                id="city-input-2"
+                options={filteredCities}
+                sx={{ width: 300 }}
+                getOptionLabel={(city: City) => `${city.city}, ${city.country} (${city.admin_name})`}
+                size="small"
+                value={selectedCity2}
+                onChange={(event, newValue) => {
+                  setSelectedCity2(newValue)
+                  setWeather2(null)
+                } }
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    label="City 2"
+                    value={selectedCity2?.city || ''}
+                    onChange={handleInputChange} />
+                )} />
+            </Grid>
+            <Grid
+              container
+              direction="row"
+              className="center"
+              sx={{ marginBottom: 5 }}
+            >
+              <Button
+                variant="contained"
+                className="goButton"
+                onClick={fetchWeatherData}
+              >
+                <b>Submit</b>
+              </Button>
+            </Grid>
+            <Grid item xs={6} className="center">
+              {weather1 &&
+                selectedCity1 &&
+                !loading1 && (
+                  <WeatherInfo weatherData={weather1} city={selectedCity1} />
+              )}
+              {loading1 && <CircularIndeterminate />}
+            </Grid>
+            <Grid item xs={6} className="center">
+              {weather2 &&
+                selectedCity2 &&
+                !loading2 && (
+                  <WeatherInfo weatherData={weather2} city={selectedCity2} />
+              )}
+              {loading2 && <CircularIndeterminate />}
+            </Grid>
+          </Hidden>
         </Grid>
         <Footer /></>
       )}

@@ -18,15 +18,8 @@
 }
 
 .navbar {
-  background-color:  purple;
-  height: 8vh;
-  width: 100%;
-  display: flex;
-}
-
-.navbar-about {
-  background-color:  purple;
-  height: 45px;
+  background-color:  #0f52ba;
+  height: 6vh;
   width: 100%;
   display: flex;
 }
@@ -39,26 +32,16 @@
   margin-top: 8px;
 }
 
-.appName {
-  font-size:x-large;
-  color: white;
-  font-weight: bold;
-  vertical-align:middle;
-  position: fixed;
-  right: 20px;
-  margin-top: 8px;
-}
-
 .citySelect {
   height: 50px;
 }
 
 .goButton {
-  background-color: purple;
+  background-color: #0f52ba;
 }
 
 .goButton:hover {
-  background-color: purple;
+  background-color: #0f52ba;
 }
 
 .bold {
@@ -92,7 +75,7 @@
 
 .footer {
   font-size: 12px;
-  background-color: purple;
+  background-color: #0f52ba;
   color: white;
   height: 38px;
   text-align: center;
@@ -127,6 +110,13 @@
   width: 30vw;
 }
 
+@media (max-width: 768px) {
+  .about-grid {
+    width: 90vw; /* Adjust the width for smaller screens */
+    margin: 0 auto; /* Center align on smaller screens */
+  }
+}
+
 .first-half {
   margin-right: 10px;
   width: 50%;
@@ -136,6 +126,15 @@
   margin-right: 10px;
   width: 50%;
 }
+
+@media (max-width: 768px) {
+  .first-half,
+  .second-half {
+    width: 100%; /* Expand to full width on smaller screens */
+    margin-right: 0; /* Remove right margin on smaller screens */
+  }
+}
+
 
 .inline-bold {
   font-weight: 600;
