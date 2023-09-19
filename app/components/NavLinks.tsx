@@ -3,7 +3,7 @@ import Link from '@mui/material/Link'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 
-export function NavLinks(props: { text: string }) {
+export function NavLinks (props: { text: string }) {
   return (
     <AppBar position="static">
       <Toolbar>

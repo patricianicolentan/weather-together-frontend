@@ -39,8 +39,8 @@ export default function About () {
                     <p>
                       Uses the{' '}
                       <a href="https://open-meteo.com/en/docs">Open Meteo API</a>{' '}
-                      for daily 
-                      <br /> 
+                      for daily
+                      <br />
                       weather forecasts, and the{' '}
                       <a href="https://simplemaps.com/data/world-cities">
                         World Cities Database
@@ -128,7 +128,7 @@ export default function About () {
                     <br />
                   </CardContent>
                 </Card>
-                
+
                 <br />
                 <br />
               </center>

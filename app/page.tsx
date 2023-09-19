@@ -13,7 +13,7 @@ import { WeatherInfo } from './components/WeatherInfo'
 import { NavLinks } from './components/NavLinks'
 import Footer from './components/Footer'
 
-export default function Main () {  
+export default function Main () {
   // State
   const [selectedCity1, setSelectedCity1] = useState<City | null>(null)
   const [selectedCity2, setSelectedCity2] = useState<City | null>(null)
