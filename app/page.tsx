@@ -107,7 +107,7 @@ export default function Main () {
               >
                 <h2>View the weather together</h2>
                 <h4>Choose two cities from anywhere in the world</h4>
-                <p style={{fontSize: 13, textAlign: 'center'}}>Please be patient, as the backend server autoscales <br/>
+                <p style={{ fontSize: 13, textAlign: 'center' }}>Please be patient, as the backend server autoscales <br/>
                 i.e. the website naps in between users</p>
               </Grid>
               <Grid
@@ -195,7 +195,7 @@ export default function Main () {
               <center>
                 <h2>View the weather together</h2>
                 <h4>Choose two cities from anywhere in the world</h4>
-                <p style={{fontSize: 13}}>Please be patient, as the backend server autoscales <br/>
+                <p style={{ fontSize: 13 }}>Please be patient, as the backend server autoscales <br/>
                 i.e. the website naps in between users</p>
               </center>
             </Grid>

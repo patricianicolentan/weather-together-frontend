@@ -178,7 +178,7 @@ export default function About () {
                       </span>
                     </div>
                     <br />
-                    <div style={{width: '55%'}}>
+                    <div style={{ width: '55%' }}>
                       <span className="inline-bold">Caching</span>
                       <br />
                       <span>
