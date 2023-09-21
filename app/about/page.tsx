@@ -140,11 +140,11 @@ export default function About () {
             <Grid
               container
               direction="column"
-              sx={{ margin: 2, width: '100%' }}
+              sx={{ margin: 1, width: '100%' }}
               className="about-grid"
             >
               <center>
-                <Card sx={{ minWidth: 275, marginBottom: 5 }}>
+                <Card sx={{ minWidth: 275, maxWidth: '80%',  marginBottom: 3 }}>
                   <CardContent>
                     <h2>About the Application</h2>
                     <p>
