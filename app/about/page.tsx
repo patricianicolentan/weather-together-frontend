@@ -144,7 +144,7 @@ export default function About () {
               className="about-grid"
             >
               <center>
-                <Card sx={{ minWidth: 275, maxWidth: '80%',  marginBottom: 3 }}>
+                <Card sx={{ minWidth: 275, maxWidth: '80%', marginBottom: 3 }}>
                   <CardContent>
                     <h2>About the Application</h2>
                     <p>
