@@ -30,6 +30,9 @@ export default function Main () {
   // handles city search
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target
+    if (value.length % 3 === 0) {
+      return
+    }
     handleSearch(value)
   }
 
@@ -103,8 +106,9 @@ export default function Main () {
                 sx={{ marginBottom: 4, flexDirection: 'column', alignItems: 'center' }}
               >
                 <h2>View the weather together</h2>
-                <p>Choose two cities from anywhere in the world</p>
-                <p>And see what the day will be like</p>
+                <h4>Choose two cities from anywhere in the world</h4>
+                <p style={{fontSize: 13, textAlign: 'center'}}>Please be patient, as the backend server autoscales <br/>
+                i.e. the website naps in between users</p>
               </Grid>
               <Grid
                 container
@@ -190,8 +194,9 @@ export default function Main () {
             <Grid container direction="column" sx={{ margin: 5 }}>
               <center>
                 <h2>View the weather together</h2>
-                <p>Choose two cities from anywhere in the world</p>
-                <p>And see what the day will be like</p>
+                <h4>Choose two cities from anywhere in the world</h4>
+                <p style={{fontSize: 13}}>Please be patient, as the backend server autoscales <br/>
+                i.e. the website naps in between users</p>
               </center>
             </Grid>
             <Grid

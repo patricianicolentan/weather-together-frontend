@@ -140,7 +140,7 @@ export default function About () {
             <Grid
               container
               direction="column"
-              sx={{ margin: 5 }}
+              sx={{ margin: 2, width: '100%' }}
               className="about-grid"
             >
               <center>
@@ -178,36 +178,36 @@ export default function About () {
                       </span>
                     </div>
                     <br />
-                    <span className="inline-bold">Caching</span>
-                    <br />
-                    <span>
-                      I leverage caching to enhance performance.
+                    <div style={{width: '55%'}}>
+                      <span className="inline-bold">Caching</span>
                       <br />
-                      If my MongoDB database already has the forecast for a city
-                      ID and the server's current date, I return it. Otherwise, I
-                      fetch it from Open Meteo, cache it, and then return it.
-                    </span>
-                    <br />
-                    <br />
-                    <span className="inline-bold">Version 1</span>
-                    <br />
-                    <span>
-                      I fetched the list of cities from my MongoDB database.
+                      <span>
+                        I leverage caching to enhance performance.
+                        If my MongoDB database already has the forecast for a city
+                        ID and the server's current date, I return it. Otherwise, I
+                        fetch it from Open Meteo, cache it, and then return it.
+                      </span>
                       <br />
-                      The user would select two cities, and I would
-                      call the backend with the coordinates. However, this
-                      turned out to be too sluggish.
-                    </span>
-                    <br />
-                    <br />
-                    <span className="inline-bold">Version 2</span>
-                    <br />
-                    <span>
-                      To improve performance and reduce response times, the city
-                      data is stored as a JSON file in the frontend. When users
-                      select two cities and click "Submit", I call
-                      the backend with the City ID and coordinates.
-                    </span>
+                      <br />
+                      <span className="inline-bold">Version 1</span>
+                      <br />
+                      <span>
+                        I fetched the list of cities from my MongoDB database.
+                        The user would select two cities, and I would
+                        call the backend with the coordinates. However, this
+                        turned out to be too sluggish.
+                      </span>
+                      <br />
+                      <br />
+                      <span className="inline-bold">Version 2</span>
+                      <br />
+                      <span>
+                        To improve performance and reduce response times, the city
+                        data is stored as a JSON file in the frontend. When users
+                        select two cities and click "Submit", I call
+                        the backend with the City ID and coordinates.
+                      </span>
+                    </div>
                     <br />
                     <h2>About the Developer</h2>
                     <p>Patricia Nicole Tan</p>

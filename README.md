@@ -9,6 +9,14 @@ To run the application locally, use ```npm run dev```. By default, the applicati
 ## Linting
 To run the linter and fix basic errors, use ```npm run lint -- --fix```.
 
+## Mobile Version
+The website now has a mobile version!
+
+Unlike Vue where you can use conditional classes according to breakpoints,
+it seems like the simplest way to resize components is to code up a separate component for mobile screens. 
+
+Please drop me a message and let me know if I got this wrong.
+
 ## Screenshots
 Screenshots from the live version on https://weather-together-web.netlify.app/
 
