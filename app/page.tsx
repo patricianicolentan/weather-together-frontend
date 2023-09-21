@@ -107,7 +107,7 @@ export default function Main () {
               >
                 <h2>View the weather together</h2>
                 <h4>Choose two cities from anywhere in the world</h4>
-                <p style={{ fontSize: 13, textAlign: 'center' }}>Please be patient, as the backend server autoscales <br/>
+                <p style={{ fontSize: 14, textAlign: 'center' }}>Please be patient, as the backend server autoscales <br/>
                 i.e. the website naps in between users</p>
               </Grid>
               <Grid
@@ -193,9 +193,9 @@ export default function Main () {
           <Hidden smDown>
             <Grid container direction="column" sx={{ margin: 5 }}>
               <center>
-                <h2>View the weather together</h2>
-                <h4>Choose two cities from anywhere in the world</h4>
-                <p style={{ fontSize: 13 }}>Please be patient, as the backend server autoscales <br/>
+                <h1>View the weather together</h1>
+                <h3>Choose two cities from anywhere in the world</h3>
+                <p style={{ fontSize: 15 }}>Please be patient, as the backend server autoscales <br/>
                 i.e. the website naps in between users</p>
               </center>
             </Grid>
